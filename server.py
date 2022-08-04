@@ -19,7 +19,7 @@ s.listen(1)
 while True:
 	try:
 		c, addr = s.accept()
-		data = c.recv(4096)
+		data = recvall(c)
 		data = data.strip().decode()
 		data = data.split()
 		msg = "".join([i[2:] for i in data])
